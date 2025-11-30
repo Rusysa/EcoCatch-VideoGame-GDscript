@@ -341,6 +341,7 @@ theme_override_font_sizes/font_size = 35
 text = "JUGAR"
 
 [node name="Movimiento2" type="Label" parent="."]
+layout_mode = 0
 offset_left = 548.0
 offset_top = 531.0
 offset_right = 768.0
