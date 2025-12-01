@@ -1,0 +1,208 @@
+[gd_scene load_steps=7 format=3 uid="uid://c304kpbeyctc"]
+
+[ext_resource type="Script" uid="uid://decfpds0bri6f" path="res://control.gd" id="1_05s7v"]
+[ext_resource type="PackedScene" uid="uid://b3u8ftt8b0hp4" path="res://Scenes/UI/ui-paraVentana.tscn" id="2_8qcxr"]
+[ext_resource type="PackedScene" uid="uid://cjhij3m0d20dc" path="res://Scenes/UI/pausa.tscn" id="2_r54s5"]
+[ext_resource type="PackedScene" uid="uid://dpaj1ka0lvah5" path="res://Scenes/UI/how_to_play.tscn" id="3_1qa2r"]
+[ext_resource type="PackedScene" uid="uid://dbp31ttu8hv84" path="res://Scenes/UI/creditos.tscn" id="4_a4s5s"]
+[ext_resource type="PackedScene" uid="uid://djnfr52vt8o1h" path="res://Scenes/UI/creditos-recursos.tscn" id="6_kf5y0"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_05s7v")
+
+[node name="Tutorial" type="Button" parent="."]
+layout_mode = 0
+offset_left = 271.0
+offset_right = 467.0
+offset_bottom = 55.0
+text = "Tutorial
+"
+
+[node name="MejorPuntuacion" type="Button" parent="."]
+layout_mode = 0
+offset_left = 509.0
+offset_top = 1.0
+offset_right = 705.0
+offset_bottom = 56.0
+text = "Mejor Record
+"
+
+[node name="Pausa" type="Button" parent="."]
+layout_mode = 0
+offset_left = 763.0
+offset_top = 1.0
+offset_right = 959.0
+offset_bottom = 56.0
+text = "Pausa
+"
+
+[node name="Jugar" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 1.0
+offset_right = 230.0
+offset_bottom = 60.0
+alignment = 1
+selected = 1
+item_count = 2
+popup/item_0/text = "Jugar"
+popup/item_0/id = 1
+popup/item_1/text = "Iniciar"
+popup/item_1/id = 2
+popup/item_1/disabled = true
+popup/item_1/separator = true
+
+[node name="Creditos" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = 1025.0
+offset_top = -1.0
+offset_right = 1231.0
+offset_bottom = 58.0
+alignment = 1
+selected = 2
+allow_reselect = true
+item_count = 3
+popup/item_0/text = "Personas involucradas"
+popup/item_0/id = 1
+popup/item_1/text = "Recursos"
+popup/item_1/id = 2
+popup/item_2/text = "Creditos"
+popup/item_2/id = 3
+popup/item_2/disabled = true
+popup/item_2/separator = true
+
+[node name="CambiarPersonaje" type="Button" parent="."]
+layout_mode = 0
+offset_left = 342.0
+offset_top = -108.0
+offset_right = 538.0
+offset_bottom = -53.0
+text = "Cambiar personaje"
+
+[node name="high-score" type="Window" parent="."]
+initial_position = 1
+size = Vector2i(500, 300)
+visible = false
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="high-score"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SubViewport" type="SubViewport" parent="high-score/SubViewportContainer"]
+handle_input_locally = false
+render_target_update_mode = 0
+
+[node name="UI" parent="high-score/SubViewportContainer/SubViewport" instance=ExtResource("2_8qcxr")]
+
+[node name="Pausa-ventana" type="Window" parent="."]
+transparent_bg = true
+title = "Pausa"
+initial_position = 1
+size = Vector2i(775, 435)
+visible = false
+exclusive = true
+unresizable = true
+transparent = true
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Pausa-ventana"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -0.190002
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="Pausa-ventana/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(774, 435)
+render_target_update_mode = 0
+
+[node name="Pausa" parent="Pausa-ventana/SubViewportContainer/SubViewport" instance=ExtResource("2_r54s5")]
+scale = Vector2(1.22, 1.22)
+transform = Transform2D(1.22, 0, 0, 1.22, 0, 0)
+
+[node name="Tutorial2" type="Window" parent="."]
+title = "Tutorial"
+initial_position = 1
+size = Vector2i(1000, 650)
+visible = false
+exclusive = true
+unresizable = true
+min_size = Vector2i(1000, 650)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Tutorial2"]
+custom_minimum_size = Vector2(1000, 700)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -25.0
+offset_right = 4.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.995, 0.995)
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="Tutorial2/SubViewportContainer"]
+handle_input_locally = false
+sdf_oversize = 0
+size = Vector2i(1004, 700)
+size_2d_override = Vector2i(1280, 600)
+size_2d_override_stretch = true
+render_target_update_mode = 0
+
+[node name="How to play" parent="Tutorial2/SubViewportContainer/SubViewport" instance=ExtResource("3_1qa2r")]
+
+[node name="Creditos-personas" type="Window" parent="."]
+initial_position = 1
+size = Vector2i(900, 500)
+visible = false
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Creditos-personas"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SubViewport" type="SubViewport" parent="Creditos-personas/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(900, 500)
+size_2d_override = Vector2i(1280, 600)
+size_2d_override_stretch = true
+render_target_update_mode = 0
+
+[node name="Creditos" parent="Creditos-personas/SubViewportContainer/SubViewport" instance=ExtResource("4_a4s5s")]
+
+[node name="Creditos-recursos" type="Window" parent="."]
+initial_position = 1
+size = Vector2i(900, 500)
+visible = false
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Creditos-recursos"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SubViewport" type="SubViewport" parent="Creditos-recursos/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(900, 500)
+size_2d_override = Vector2i(1280, 600)
+size_2d_override_stretch = true
+render_target_update_mode = 0
+
+[node name="Creditos" parent="Creditos-recursos/SubViewportContainer/SubViewport" instance=ExtResource("6_kf5y0")]
+
+[connection signal="pressed" from="Tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="MejorPuntuacion" to="." method="_on_mejor_puntuacion_pressed"]
+[connection signal="pressed" from="Pausa" to="." method="_on_pausa_pressed"]
+[connection signal="item_selected" from="Jugar" to="." method="_on_jugar_item_selected"]
+[connection signal="item_selected" from="Creditos" to="." method="_on_creditos_item_selected"]
+[connection signal="close_requested" from="high-score" to="." method="_on_highscore_close_requested"]
+[connection signal="close_requested" from="Pausa-ventana" to="." method="_on_pausaventana_close_requested"]
+[connection signal="close_requested" from="Tutorial2" to="." method="_on_tutorial_2_close_requested"]
+[connection signal="close_requested" from="Creditos-personas" to="." method="_on_creditospersonas_close_requested"]
+[connection signal="close_requested" from="Creditos-recursos" to="." method="_on_creditosrecursos_close_requested"]

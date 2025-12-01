@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dpaj1ka0lvah5"]
+[gd_scene load_steps=16 format=3 uid="uid://dpaj1ka0lvah5"]
 
 [ext_resource type="Script" uid="uid://03a57s8hake3" path="res://Script/UI/how_to_play.gd" id="1_0g8wc"]
 [ext_resource type="Texture2D" uid="uid://bqt1a6xouco5n" path="res://Assets/The Male adventurer - Free/Walk/walk.png" id="1_23ib0"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://3s754pvr5khf" path="res://Assets/images/plastic-bottle-in-pixel-art-style-vector-removebg-preview.png" id="9_ecist"]
 [ext_resource type="Texture2D" uid="uid://cdae22dc1eh0s" path="res://Assets/images/pixel-art-illustration-soda-pixelated-600nw-2543492611-removebg-preview.png" id="10_ci4fw"]
 [ext_resource type="Texture2D" uid="uid://caio0q7fvwaq7" path="res://Assets/ControllerIcons/esc.png" id="12_ci4fw"]
+[ext_resource type="Texture2D" uid="uid://duqc81qg0lmme" path="res://Assets/ControllerIcons/z.png" id="13_4fdli"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ufirb"]
 font_size = 25
@@ -144,7 +145,7 @@ offset_top = 429.0
 offset_right = 596.0
 offset_bottom = 478.0
 text = "Los objetos se depositan
-usando la barra espaciadora"
+usando la tecla Z"
 horizontal_alignment = 1
 justification_flags = 162
 
@@ -191,11 +192,13 @@ texture = ExtResource("6_ifrvg")
 flip_h = true
 
 [node name="Grab_Item" type="Sprite2D" parent="ControllerIcons"]
+visible = false
 position = Vector2(483, 401)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("7_8b7o0")
 
 [node name="Back" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 473.0
 offset_top = 640.0
@@ -332,6 +335,7 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("10_ci4fw")
 
 [node name="Jugar" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 678.0
 offset_top = 641.0
@@ -341,6 +345,7 @@ theme_override_font_sizes/font_size = 35
 text = "JUGAR"
 
 [node name="Movimiento2" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 548.0
 offset_top = 531.0
@@ -351,9 +356,15 @@ horizontal_alignment = 1
 justification_flags = 162
 
 [node name="Esc" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(655, 589)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("12_ci4fw")
+
+[node name="Z" type="Sprite2D" parent="."]
+position = Vector2(483, 404)
+scale = Vector2(0.66, 0.68)
+texture = ExtResource("13_4fdli")
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Jugar" to="." method="_on_jugar_pressed"]

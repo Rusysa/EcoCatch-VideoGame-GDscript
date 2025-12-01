@@ -25,9 +25,9 @@ func _ready():
 	SignalManager.on_grounded_object_collected.connect(_on_grounded_object_collected)
 
 	
-	load_high_score()
+	#load_high_score()
 	ui.update_score(score)
-	ui.update_high_score(high_score)
+	#ui.update_high_score(high_score)
 	ui.update_grounded_objects(grounded_objects_count)
 	spawn_timer.start()
 

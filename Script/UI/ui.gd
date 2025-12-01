@@ -3,7 +3,8 @@ extends CanvasLayer
 @onready var score_label = $ScoreLabel
 @onready var high_score_label = $HighScoreLabel
 @onready var grounded_objects_label = $GroundedObjectsLabel # ¡Ajusta la ruta si es necesario!
-
+var score: int = 0
+var high_score: int = 0
 
 func update_score(new_score):
 	score_label.text = "Puntución: %s" % new_score

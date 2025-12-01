@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://du4taax6rx515"]
+[gd_scene load_steps=7 format=3 uid="uid://b3u8ftt8b0hp4"]
 
-[ext_resource type="Script" uid="uid://cdie33068l1lr" path="res://Script/UI/ui.gd" id="1_ahcct"]
+[ext_resource type="Script" uid="uid://3m2du5rxbw56" path="res://Script/UI/ui-ventana.gd" id="1_rf2kw"]
+[ext_resource type="Texture2D" uid="uid://lp7xf7ifpbxk" path="res://Assets/bg images/darker bg.png" id="2_rf2kw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ahcct"]
 font_size = 20
@@ -20,10 +21,21 @@ outline_size = 2
 shadow_size = 5
 shadow_color = Color(0, 0, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_g4stp"]
+font_size = 35
+outline_size = 2
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
+
 [node name="UI" type="CanvasLayer"]
-script = ExtResource("1_ahcct")
+script = ExtResource("1_rf2kw")
+
+[node name="DarkerBg" type="Sprite2D" parent="."]
+position = Vector2(338, 290)
+texture = ExtResource("2_rf2kw")
 
 [node name="ScoreLabel" type="Label" parent="."]
+visible = false
 offset_left = 46.0
 offset_top = 172.0
 offset_right = 207.0
@@ -32,18 +44,28 @@ text = "Puntaje: "
 label_settings = SubResource("LabelSettings_ahcct")
 
 [node name="HighScoreLabel" type="Label" parent="."]
-visible = false
-offset_left = 47.0
-offset_top = 124.0
-offset_right = 231.0
-offset_bottom = 159.0
+offset_left = 163.0
+offset_top = 152.0
+offset_right = 347.0
+offset_bottom = 187.0
 text = "Mejor puntaje: "
 label_settings = SubResource("LabelSettings_de23q")
+vertical_alignment = 1
 
 [node name="GroundedObjectsLabel" type="Label" parent="."]
+visible = false
 offset_left = 41.0
 offset_top = 223.0
 offset_right = 343.0
 offset_bottom = 260.0
 text = "Objetos en el suelo : 0/10"
 label_settings = SubResource("LabelSettings_c7mb3")
+
+[node name="Title" type="Label" parent="."]
+offset_left = 113.0
+offset_top = 79.0
+offset_right = 400.0
+offset_bottom = 128.0
+text = "Puntaje mas Alto"
+label_settings = SubResource("LabelSettings_g4stp")
+vertical_alignment = 1
