@@ -12,8 +12,14 @@ func _on_tutorial_pressed() -> void:
 
 #Jugar
 func _on_jugar_item_selected(index: int) -> void:
-	get_tree().change_scene_to_file("res://Scenes/levels/Main.tscn")
-
+	if(index == 0):
+		print(index)
+		get_tree().change_scene_to_file("res://Scenes/levels/Main.tscn")
+	else:
+		print(index)
+		get_tree().change_scene_to_file("res://main_menu.tscn")
+	
+	
 #Señal para manejar el cerrado de la ventana de pausa
 func _on_pausaventana_close_requested() -> void:
 	$"Pausa-ventana".hide()

@@ -1,11 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://c304kpbeyctc"]
+[gd_scene load_steps=7 format=3 uid="uid://hbjne4rqwvsk"]
 
-[ext_resource type="Script" uid="uid://decfpds0bri6f" path="res://control.gd" id="1_05s7v"]
-[ext_resource type="PackedScene" uid="uid://b3u8ftt8b0hp4" path="res://Scenes/UI/ui-paraVentana.tscn" id="2_8qcxr"]
-[ext_resource type="PackedScene" uid="uid://cjhij3m0d20dc" path="res://Scenes/UI/pausa.tscn" id="2_r54s5"]
-[ext_resource type="PackedScene" uid="uid://dpaj1ka0lvah5" path="res://Scenes/UI/how_to_play.tscn" id="3_1qa2r"]
-[ext_resource type="PackedScene" uid="uid://dbp31ttu8hv84" path="res://Scenes/UI/creditos.tscn" id="4_a4s5s"]
-[ext_resource type="PackedScene" uid="uid://djnfr52vt8o1h" path="res://Scenes/UI/creditos-recursos.tscn" id="6_kf5y0"]
+[ext_resource type="Script" uid="uid://decfpds0bri6f" path="res://control.gd" id="1_lneme"]
+[ext_resource type="PackedScene" uid="uid://b3u8ftt8b0hp4" path="res://Scenes/UI/ui-paraVentana.tscn" id="2_2mxkq"]
+[ext_resource type="PackedScene" uid="uid://cjhij3m0d20dc" path="res://Scenes/UI/pausa.tscn" id="3_lsela"]
+[ext_resource type="PackedScene" uid="uid://dpaj1ka0lvah5" path="res://Scenes/UI/how_to_play.tscn" id="4_pbbu0"]
+[ext_resource type="PackedScene" uid="uid://dbp31ttu8hv84" path="res://Scenes/UI/creditos.tscn" id="5_rvsmn"]
+[ext_resource type="PackedScene" uid="uid://djnfr52vt8o1h" path="res://Scenes/UI/creditos-recursos.tscn" id="6_uoh1s"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -14,7 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_05s7v")
+script = ExtResource("1_lneme")
 
 [node name="Tutorial" type="Button" parent="."]
 layout_mode = 0
@@ -29,6 +29,7 @@ layout_mode = 0
 offset_left = 524.0
 offset_right = 720.0
 offset_bottom = 63.0
+disabled = true
 text = "Mejor Record
 "
 
@@ -37,6 +38,7 @@ layout_mode = 0
 offset_left = 769.0
 offset_right = 965.0
 offset_bottom = 63.0
+disabled = true
 text = "Pausa
 "
 
@@ -97,7 +99,7 @@ offset_bottom = 40.0
 handle_input_locally = false
 render_target_update_mode = 0
 
-[node name="UI" parent="high-score/SubViewportContainer/SubViewport" instance=ExtResource("2_8qcxr")]
+[node name="UI" parent="high-score/SubViewportContainer/SubViewport" instance=ExtResource("2_2mxkq")]
 
 [node name="Pausa-ventana" type="Window" parent="."]
 transparent_bg = true
@@ -123,7 +125,7 @@ handle_input_locally = false
 size = Vector2i(774, 435)
 render_target_update_mode = 0
 
-[node name="Pausa" parent="Pausa-ventana/SubViewportContainer/SubViewport" instance=ExtResource("2_r54s5")]
+[node name="Pausa" parent="Pausa-ventana/SubViewportContainer/SubViewport" instance=ExtResource("3_lsela")]
 scale = Vector2(1.22, 1.22)
 transform = Transform2D(1.22, 0, 0, 1.22, 0, 0)
 
@@ -157,7 +159,7 @@ size_2d_override = Vector2i(1280, 600)
 size_2d_override_stretch = true
 render_target_update_mode = 0
 
-[node name="How to play" parent="Tutorial2/SubViewportContainer/SubViewport" instance=ExtResource("3_1qa2r")]
+[node name="How to play" parent="Tutorial2/SubViewportContainer/SubViewport" instance=ExtResource("4_pbbu0")]
 
 [node name="Creditos-personas" type="Window" parent="."]
 initial_position = 1
@@ -175,7 +177,7 @@ size_2d_override = Vector2i(1280, 600)
 size_2d_override_stretch = true
 render_target_update_mode = 0
 
-[node name="Creditos" parent="Creditos-personas/SubViewportContainer/SubViewport" instance=ExtResource("4_a4s5s")]
+[node name="Creditos" parent="Creditos-personas/SubViewportContainer/SubViewport" instance=ExtResource("5_rvsmn")]
 
 [node name="Creditos-recursos" type="Window" parent="."]
 initial_position = 1
@@ -193,7 +195,7 @@ size_2d_override = Vector2i(1280, 600)
 size_2d_override_stretch = true
 render_target_update_mode = 0
 
-[node name="Creditos" parent="Creditos-recursos/SubViewportContainer/SubViewport" instance=ExtResource("6_kf5y0")]
+[node name="Creditos" parent="Creditos-recursos/SubViewportContainer/SubViewport" instance=ExtResource("6_uoh1s")]
 
 [connection signal="pressed" from="Tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="MejorPuntuacion" to="." method="_on_mejor_puntuacion_pressed"]

@@ -73,7 +73,7 @@ text = "
 
 [center][font_size=38][b]-- Comentarios y apoyo--[/b][/font_size][/center]
 [center][font_size=22]-Hugo Contreras Castro [/font_size][/center]
-[center][font_size=22]-Luis [/font_size][/center]
+[center][font_size=22]-Luis Felipe Ocampo Gomez [/font_size][/center]
 "
 
 [node name="Button" type="Button" parent="."]

@@ -150,6 +150,7 @@ horizontal_alignment = 1
 justification_flags = 162
 
 [node name="Character" type="Node2D" parent="."]
+texture_filter = 1
 
 [node name="Left" type="Sprite2D" parent="Character"]
 position = Vector2(166.981, 313)

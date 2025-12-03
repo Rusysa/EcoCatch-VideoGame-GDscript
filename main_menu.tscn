@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://qnbbvpg28iqf"]
+[gd_scene load_steps=5 format=3 uid="uid://qnbbvpg28iqf"]
 
 [ext_resource type="Script" uid="uid://dd83xl40skv16" path="res://Script/UI/main_menu.gd" id="1_06t4h"]
 [ext_resource type="Texture2D" uid="uid://daggikb01ylu4" path="res://Assets/bg images/bg gimp.png" id="2_7vrkn"]
 [ext_resource type="PackedScene" uid="uid://c304kpbeyctc" path="res://Script/UI/control.tscn" id="3_fu7sn"]
+[ext_resource type="PackedScene" uid="uid://hbjne4rqwvsk" path="res://Script/UI/control-disabled.tscn" id="4_jix8l"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -79,7 +80,13 @@ text = "EcoCatch
 horizontal_alignment = 1
 
 [node name="Control" parent="." instance=ExtResource("3_fu7sn")]
+visible = false
 layout_mode = 1
+
+[node name="Control2" parent="." instance=ExtResource("4_jix8l")]
+layout_mode = 1
+offset_left = 5.0
+offset_right = 5.0
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/ControlButton" to="." method="_on_control_button_pressed"]
